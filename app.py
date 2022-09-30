@@ -1,8 +1,10 @@
+import random
+
 from PySide6 import QtWidgets
-from ui_main import Ui_MainWindow
 from PySide6.QtCore import QEvent
 
-import random
+from ui_main import Ui_MainWindow
+
 
 class MainWindonw(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
