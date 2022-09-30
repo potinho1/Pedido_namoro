@@ -13,21 +13,21 @@ class MainWindonw(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.coracao.setVisible(False)
 
-        self.button_no.clicked.connect(self.moveButton)
-        self.button_yes.clicked.connect(self.yes_choice)
-        self.frame_no.installEventFilter(self)
+        self.button_yes.clicked.connect(self.moveButton)
+        self.button_no.clicked.connect(self.yes_choice)
+        self.frame_yes.installEventFilter(self)
 
     def moveButton(self):
-        self.frame_no.move(random.randint(0, 300), random.randint(0, 300))
+        self.frame_yes.move(random.randint(0, 300), random.randint(0, 300))
 
     def yes_choice(self):
         self.pergunta.setText("Melhor opção")
         self.coracao.setVisible(True)
-        self.button_no.setVisible(False)
         self.button_yes.setVisible(False)
+        self.button_no.setVisible(False)
 
     def eventFilter(self, obj, event):
-        if event.type() == QEvent.Enter and obj == self.frame_no:
+        if event.type() == QEvent.Enter and obj == self.frame_yes:
             self.moveButton()
             return True
         else:
